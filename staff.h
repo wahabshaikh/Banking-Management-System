@@ -235,13 +235,6 @@ void remove_account()
 		return;
 	}
 
-	else if (ptr -> PIN != pin) 
-	{
-		printf("\n Invalid pin! Please try again.\n");
-		Sleep(3000);
-		return;
-	}
-
 	// CASE 2: Deleting any other account
 	else
 	{
@@ -262,7 +255,6 @@ void remove_account()
 		{
 			printf("\n Invalid pin! Please try again.\n");
 			Sleep(3000);
-			return;
 		}
 
 		else
@@ -392,7 +384,7 @@ void deposit()
 	// Update account balance
 	ptr -> BALANCE += amount;
 
-	printf("\n\n Amount deposited successfully!");
+	printf("\n Amount deposited successfully!");
 	printf("\n Updated balance: %lf\n", ptr -> BALANCE);
 	Sleep(3000);
 
@@ -436,8 +428,9 @@ void withdraw()
 
 	if (amount > ptr -> BALANCE)
 	{
-		printf("Insufficient balance! Please try again.\n");
+		printf("\n Insufficient balance! Please try again.\n");
 		Sleep(3000);
+		return;
 	}
 
 	else
@@ -446,7 +439,7 @@ void withdraw()
 		ptr -> BALANCE -= amount;
 	}
 
-	printf("\n\n Amount withdrawn successfully!");
+	printf("\n Amount withdrawn successfully!");
 	printf("\n Updated balance: %lf\n", ptr -> BALANCE);
 	Sleep(3000);
 

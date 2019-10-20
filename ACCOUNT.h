@@ -31,7 +31,6 @@ void file_to_ll()
 	{
 		int count;
 		fscanf(fp, "Number of Records: %d\n", &count);
-
 		int i;
         for (i = 0; i < count; i++)
         {
@@ -41,7 +40,6 @@ void file_to_ll()
 
             fscanf(fp, "\nTIMESTAMP:- %d-%d-%d %d:%d:%d\nACCOUNT NUMBER:- %llu\nPIN:- %d\nNAME:- %s\nAGE:- %d\nADDRESS:- %s\nBALANCE:- %lf\n", 
 &(new_node -> str_t.wDay), &(new_node -> str_t.wMonth), &(new_node -> str_t.wYear), &(new_node -> str_t.wHour), &(new_node -> str_t.wMinute), &(new_node -> str_t.wSecond), &(new_node -> ACCOUNT_NUM), &(new_node -> PIN), new_node -> NAME, &(new_node -> AGE), new_node -> ADDRESS, &(new_node -> BALANCE));
-
             if (start == NULL)
             {
                 start = new_node;
@@ -53,8 +51,9 @@ void file_to_ll()
                 {
                     ptr = ptr -> next;
                 }
-                ptr -> next = new_node;
-            }
+                
+                ptr -> next = new_node;   
+            } 
         }
 	}
 } 
